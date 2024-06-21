@@ -22,7 +22,7 @@ struct SignUpView: View {
                         .padding(.horizontal, 48)
                     
                     Text("Cadastro")
-                        .foregroundStyle(.orange)
+                        .foregroundStyle(Color("primaryColor"))
                         .font(Font.system(.title).bold())
                         .padding(.bottom, 8)
                     
