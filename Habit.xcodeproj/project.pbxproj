@@ -20,6 +20,8 @@
 		D464359E2C249F320032FBB1 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = D464359D2C249F320032FBB1 /* Gender.swift */; };
 		D46435A02C24A3E90032FBB1 /* SignUpUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D464359F2C24A3E90032FBB1 /* SignUpUIState.swift */; };
 		D46435A22C24A48D0032FBB1 /* SignUpViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435A12C24A48D0032FBB1 /* SignUpViewRouter.swift */; };
+		D46435A52C24CA940032FBB1 /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435A42C24CA940032FBB1 /* EditTextView.swift */; };
+		D46435AA2C24EF960032FBB1 /* SecureTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435A92C24EF960032FBB1 /* SecureTextView.swift */; };
 		D4F1B2D42C23EF09004EF611 /* HabitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F1B2D32C23EF09004EF611 /* HabitApp.swift */; };
 		D4F1B2D82C23EF0B004EF611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */; };
 		D4F1B2DB2C23EF0B004EF611 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2DA2C23EF0B004EF611 /* Preview Assets.xcassets */; };
@@ -41,6 +43,8 @@
 		D464359D2C249F320032FBB1 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		D464359F2C24A3E90032FBB1 /* SignUpUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUIState.swift; sourceTree = "<group>"; };
 		D46435A12C24A48D0032FBB1 /* SignUpViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewRouter.swift; sourceTree = "<group>"; };
+		D46435A42C24CA940032FBB1 /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
+		D46435A92C24EF960032FBB1 /* SecureTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextView.swift; sourceTree = "<group>"; };
 		D4F1B2D02C23EF09004EF611 /* Habit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F1B2D32C23EF09004EF611 /* HabitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitApp.swift; sourceTree = "<group>"; };
 		D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 		D464359B2C249F1E0032FBB1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D46435A32C24CA8A0032FBB1 /* View */,
 				D464359C2C249F2B0032FBB1 /* Model */,
 			);
 			path = Common;
@@ -186,6 +191,15 @@
 				D464359D2C249F320032FBB1 /* Gender.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D46435A32C24CA8A0032FBB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D46435A42C24CA940032FBB1 /* EditTextView.swift */,
+				D46435A92C24EF960032FBB1 /* SecureTextView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D4F1B2C72C23EF08004EF611 = {
@@ -329,6 +343,7 @@
 				D46435A22C24A48D0032FBB1 /* SignUpViewRouter.swift in Sources */,
 				D46435A02C24A3E90032FBB1 /* SignUpUIState.swift in Sources */,
 				D4F1B2D42C23EF09004EF611 /* HabitApp.swift in Sources */,
+				D46435AA2C24EF960032FBB1 /* SecureTextView.swift in Sources */,
 				D46435832C24776F0032FBB1 /* SignInViewModel.swift in Sources */,
 				D46435982C2492430032FBB1 /* SignUpView.swift in Sources */,
 				D464359E2C249F320032FBB1 /* Gender.swift in Sources */,
@@ -337,6 +352,7 @@
 				D4F1B2E62C23EFE8004EF611 /* SplashView.swift in Sources */,
 				D464357B2C245F4F0032FBB1 /* SplashViewModel.swift in Sources */,
 				D46435872C2489D80032FBB1 /* SignInUIState.swift in Sources */,
+				D46435A52C24CA940032FBB1 /* EditTextView.swift in Sources */,
 				D46435852C24784B0032FBB1 /* SplashViewRouter.swift in Sources */,
 				D46435812C2477380032FBB1 /* SignInView.swift in Sources */,
 			);

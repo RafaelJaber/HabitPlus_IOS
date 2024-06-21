@@ -33,7 +33,7 @@ struct SignInView: View {
                                     .padding(.horizontal, 48)
                                 
                                 Text("Login")
-                                    .foregroundStyle(.orange)
+                                    .foregroundStyle(Color("primaryColor"))
                                     .font(Font.system(.title).bold())
                                     .padding(.bottom, 8)
                                 
@@ -62,7 +62,7 @@ struct SignInView: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .padding(.horizontal, 32)
-                    .background(.white)
+                    .background(Color("backgroundColor"))
                     .navigationBarTitle("Login", displayMode: .inline)
                     .navigationBarHidden(navigationHidden)
                 }
@@ -79,23 +79,27 @@ struct SignInView: View {
 
 extension SignInView {
     var emailField: some View {
-        TextField("", text: $email)
-            .frame(height: 36)
-            .textFieldStyle(PlainTextFieldStyle())
-            .padding([.horizontal], 4)
-            .cornerRadius(8)
-            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.orange))
+        EditTextView(
+            text: $email,
+            placeholder: "E-mail",
+            keyboard: .emailAddress,
+            error: "E-mail inválido",
+            failure: email.count < 5,
+            icon: "envelope"
+        )
     }
 }
 
 extension SignInView {
     var passwordField: some View {
-        SecureField("", text: $password)
-            .frame(height: 36)
-            .textFieldStyle(PlainTextFieldStyle())
-            .padding([.horizontal], 4)
-            .cornerRadius(8)
-            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.orange))
+        SecureTextView(
+            text: $password,
+            placeholder: "Senha",
+            keyboard: .default,
+            error: "Campo deve estar preenchido",
+            failure: password.count < 5,
+            icon: "lock"
+        )
     }
 }
 
@@ -109,7 +113,7 @@ extension SignInView {
                     .frame(maxWidth: .infinity, minHeight: 44)
                     .foregroundColor(.white)
                     .font(Font.system(.title3).bold())
-                    .background(.orange)
+                    .background(Color("primaryColor"))
                     .cornerRadius(8)
             }
         
@@ -120,7 +124,7 @@ extension SignInView {
     var registerLink: some View {
         VStack {
             Text("Ainda não possui login ativo?")
-                .foregroundStyle(.gray)
+                .foregroundStyle(Color("textAuxColor"))
                 .padding(.top, 48)
             
             ZStack {
@@ -128,7 +132,7 @@ extension SignInView {
                     viewModel.signUpView()
                 } label: {
                     Text("Realize seu cadastro")
-                        .foregroundStyle(.orange)
+                        .foregroundStyle(Color("primaryColor"))
                 }
             }
         }
