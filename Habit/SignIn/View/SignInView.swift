@@ -84,7 +84,7 @@ extension SignInView {
             placeholder: "E-mail",
             keyboard: .emailAddress,
             error: "E-mail inválido",
-            failure: email.count < 5,
+            failure: !email.isEmail(),
             icon: "envelope"
         )
     }
@@ -92,13 +92,14 @@ extension SignInView {
 
 extension SignInView {
     var passwordField: some View {
-        SecureTextView(
+        EditTextView(
             text: $password,
             placeholder: "Senha",
             keyboard: .default,
-            error: "Campo deve estar preenchido",
-            failure: password.count < 5,
-            icon: "lock"
+            error: "Senha deve conter no mínimo 8 caracteres",
+            failure: password.count < 8,
+            icon: "lock",
+            isSecure: true 
         )
     }
 }

@@ -16,6 +16,7 @@ struct EditTextView: View {
     var error: String? = nil
     var failure: Bool? = nil
     var icon: String? = nil
+    var isSecure: Bool = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -25,13 +26,21 @@ struct EditTextView: View {
                         .foregroundStyle(Color("primaryColor"))
                 }
                 
-                TextField(placeholder, text: $text)
-                    .keyboardType(keyboard)
-                    .foregroundStyle(Color("textColor"))
-                    .padding(.leading, 2)
-                    .padding(.vertical, 12)
-                    .cornerRadius(8)
-                    
+                if isSecure {
+                    SecureField(placeholder, text: $text)
+                        .keyboardType(keyboard)
+                        .foregroundStyle(Color("textColor"))
+                        .padding(.leading, 2)
+                        .padding(.vertical, 12)
+                        .cornerRadius(8)
+                } else {
+                    TextField(placeholder, text: $text)
+                        .keyboardType(keyboard)
+                        .foregroundStyle(Color("textColor"))
+                        .padding(.leading, 2)
+                        .padding(.vertical, 12)
+                        .cornerRadius(8)
+                }
             }
             .padding(.horizontal, 14)
             .overlay(RoundedRectangle(cornerRadius: 8.0).stroke(Color("primaryColor"), lineWidth: 0.8))
