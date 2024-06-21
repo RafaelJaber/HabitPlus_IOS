@@ -56,7 +56,7 @@ struct SignUpView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding(.horizontal, 32)
-            .background(.white)
+            .background(Color("backgroundColor"))
             
             if case SignUpUIState.error(let value) = viewModel.uiState {
                 Text("")
@@ -72,67 +72,80 @@ struct SignUpView: View {
 
 extension SignUpView {
     var fullNameField: some View {
-        TextField("", text: $fullName)
-            .frame(height: 36)
-            .textFieldStyle(PlainTextFieldStyle())
-            .padding([.horizontal], 4)
-            .cornerRadius(8)
-            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.orange))
+        EditTextView(
+            text: $fullName,
+            placeholder: "Nome Completo",
+            keyboard: .alphabet,
+            error: "Preencha o nome completo",
+            failure: fullName.count < 3,
+            icon: "person"
+        )
     }
 }
 
 extension SignUpView {
     var emailField: some View {
-        TextField("", text: $email)
-            .frame(height: 36)
-            .textFieldStyle(PlainTextFieldStyle())
-            .padding([.horizontal], 4)
-            .cornerRadius(8)
-            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.orange))
+        EditTextView(
+            text: $email,
+            placeholder: "E-mail",
+            keyboard: .emailAddress,
+            error: "E-mail inválido",
+            failure: !email.isEmail(),
+            icon: "envelope"
+        )
     }
 }
 
 extension SignUpView {
     var passwordField: some View {
-        SecureField("", text: $password)
-            .frame(height: 36)
-            .textFieldStyle(PlainTextFieldStyle())
-            .padding([.horizontal], 4)
-            .cornerRadius(8)
-            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.orange))
+        EditTextView(
+            text: $password,
+            placeholder: "Senha",
+            keyboard: .default,
+            error: "Senha deve conter no mínimo 8 caracteres",
+            failure: password.count < 8,
+            icon: "lock",
+            isSecure: true
+        )
     }
 }
 
 extension SignUpView {
     var documentField: some View {
-        TextField("", text: $document)
-            .frame(height: 36)
-            .textFieldStyle(PlainTextFieldStyle())
-            .padding([.horizontal], 4)
-            .cornerRadius(8)
-            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.orange))
+        EditTextView(
+            text: $document,
+            placeholder: "CPF",
+            keyboard: .numberPad,
+            error: "CPF inválido",
+            failure: !document.isValidCpf(),
+            icon: "person.text.rectangle"
+        )
     }
 }
 
 extension SignUpView {
     var phoneField: some View {
-        TextField("", text: $phone)
-            .frame(height: 36)
-            .textFieldStyle(PlainTextFieldStyle())
-            .padding([.horizontal], 4)
-            .cornerRadius(8)
-            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.orange))
+        EditTextView(
+            text: $phone,
+            placeholder: "Celular",
+            keyboard: .numberPad,
+            error: "Entre com o DDD + 9 digitos",
+            failure: phone.count != 11,
+            icon: "phone"
+        )
     }
 }
 
 extension SignUpView {
     var birthdayField: some View {
-        TextField("", text: $birthday)
-            .frame(height: 36)
-            .textFieldStyle(PlainTextFieldStyle())
-            .padding([.horizontal], 4)
-            .cornerRadius(8)
-            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.orange))
+        EditTextView(
+            text: $birthday,
+            placeholder: "Data de Nascimento",
+            keyboard: .decimalPad,
+            error: "Data deve ser dd/MM/yyyy",
+            failure: birthday.count != 8,
+            icon: "birthday.cake"
+        )
     }
 }
 
@@ -152,17 +165,20 @@ extension SignUpView {
 
 extension SignUpView {
     var registerButton: some View {
-        Button {
-            viewModel.register()
-            } label: {
-                Text("Cadastrar")
-                    .padding(.horizontal, 8)
-                    .frame(maxWidth: .infinity, minHeight: 44)
-                    .foregroundColor(.white)
-                    .font(Font.system(.title3).bold())
-                    .background(.orange)
-                    .cornerRadius(8)
-            }
+        LoadingButtonView(
+            action: {
+                viewModel.register()
+            },
+            text: "Cadastrar",
+            showProgress: self.viewModel.uiState == SignUpUIState.loading,
+            disabled: 
+                !email.isEmail() ||
+                password.count < 8 ||
+                fullName.count < 3 ||
+                !document.isValidCpf() ||
+                phone.count != 11 ||
+                birthday.count != 8
+        )
         
     }
 }
