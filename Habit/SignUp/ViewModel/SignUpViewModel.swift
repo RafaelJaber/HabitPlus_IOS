@@ -13,6 +13,13 @@ class SignUpViewModel: ObservableObject {
     var publisher: PassthroughSubject<Bool, Never>!
     
     @Published var uiState: SignUpUIState = .none
+    @Published var fullName = ""
+    @Published var email = ""
+    @Published var password = ""
+    @Published var document = ""
+    @Published var phone = ""
+    @Published var birthday = ""
+    @Published var gender = Gender.male
     
     
     func register() {
@@ -22,6 +29,15 @@ class SignUpViewModel: ObservableObject {
             self.uiState = .success
             self.publisher.send(true)
         }
+    }
+    
+    func formIsInvalid() -> Bool {
+        return !email.isEmail() ||
+        password.count < 8 ||
+        fullName.count < 3 ||
+        !document.isValidCpf() ||
+        phone.count != 11 ||
+        birthday.count != 8
     }
     
 }

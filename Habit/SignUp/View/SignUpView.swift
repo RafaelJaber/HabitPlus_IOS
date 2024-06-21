@@ -11,13 +11,6 @@ struct SignUpView: View {
     
     @ObservedObject var viewModel: SignUpViewModel
     
-    @State var fullName = ""
-    @State var email = ""
-    @State var password = ""
-    @State var document = ""
-    @State var phone = ""
-    @State var birthday = ""
-    @State var gender = Gender.male
     
     var body: some View {
         ZStack {
@@ -73,11 +66,11 @@ struct SignUpView: View {
 extension SignUpView {
     var fullNameField: some View {
         EditTextView(
-            text: $fullName,
+            text: $viewModel.fullName,
             placeholder: "Nome Completo",
             keyboard: .alphabet,
             error: "Preencha o nome completo",
-            failure: fullName.count < 3,
+            failure: viewModel.fullName.count < 3,
             icon: "person"
         )
     }
@@ -86,11 +79,11 @@ extension SignUpView {
 extension SignUpView {
     var emailField: some View {
         EditTextView(
-            text: $email,
+            text: $viewModel.email,
             placeholder: "E-mail",
             keyboard: .emailAddress,
             error: "E-mail inválido",
-            failure: !email.isEmail(),
+            failure: !viewModel.email.isEmail(),
             icon: "envelope"
         )
     }
@@ -99,11 +92,11 @@ extension SignUpView {
 extension SignUpView {
     var passwordField: some View {
         EditTextView(
-            text: $password,
+            text: $viewModel.password,
             placeholder: "Senha",
             keyboard: .default,
             error: "Senha deve conter no mínimo 8 caracteres",
-            failure: password.count < 8,
+            failure: viewModel.password.count < 8,
             icon: "lock",
             isSecure: true
         )
@@ -113,11 +106,11 @@ extension SignUpView {
 extension SignUpView {
     var documentField: some View {
         EditTextView(
-            text: $document,
+            text: $viewModel.document,
             placeholder: "CPF",
             keyboard: .numberPad,
             error: "CPF inválido",
-            failure: !document.isValidCpf(),
+            failure: !viewModel.document.isValidCpf(),
             icon: "person.text.rectangle"
         )
     }
@@ -126,11 +119,11 @@ extension SignUpView {
 extension SignUpView {
     var phoneField: some View {
         EditTextView(
-            text: $phone,
+            text: $viewModel.phone,
             placeholder: "Celular",
             keyboard: .numberPad,
             error: "Entre com o DDD + 9 digitos",
-            failure: phone.count != 11,
+            failure: viewModel.phone.count != 11,
             icon: "phone"
         )
     }
@@ -139,11 +132,11 @@ extension SignUpView {
 extension SignUpView {
     var birthdayField: some View {
         EditTextView(
-            text: $birthday,
+            text: $viewModel.birthday,
             placeholder: "Data de Nascimento",
             keyboard: .decimalPad,
             error: "Data deve ser dd/MM/yyyy",
-            failure: birthday.count != 8,
+            failure: viewModel.birthday.count != 8,
             icon: "birthday.cake"
         )
     }
@@ -151,7 +144,7 @@ extension SignUpView {
 
 extension SignUpView {
     var genderField: some View {
-        Picker("Gender", selection: $gender) {
+        Picker("Gender", selection: $viewModel.gender) {
             ForEach(Gender.allCases, id: \.self) { value in
                 Text(value.rawValue)
                     .tag(value)
@@ -171,13 +164,7 @@ extension SignUpView {
             },
             text: "Cadastrar",
             showProgress: self.viewModel.uiState == SignUpUIState.loading,
-            disabled: 
-                !email.isEmail() ||
-                password.count < 8 ||
-                fullName.count < 3 ||
-                !document.isValidCpf() ||
-                phone.count != 11 ||
-                birthday.count != 8
+            disabled: viewModel.formIsInvalid()
         )
         
     }
