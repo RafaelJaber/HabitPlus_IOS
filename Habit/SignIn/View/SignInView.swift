@@ -106,18 +106,14 @@ extension SignInView {
 
 extension SignInView {
     var enterButton: some View {
-        Button {
-            viewModel.login(email: email, password: password)
-            } label: {
-                Text("Entrar")
-                    .padding(.horizontal, 8)
-                    .frame(maxWidth: .infinity, minHeight: 44)
-                    .foregroundColor(.white)
-                    .font(Font.system(.title3).bold())
-                    .background(Color("primaryColor"))
-                    .cornerRadius(8)
-            }
-        
+        LoadingButtonView(
+            action: {
+                viewModel.login(email: email, password: password)
+            },
+            text: "Entrar",
+            showProgress: self.viewModel.uiState == SignInUIState.loading,
+            disabled: !email.isEmail() || password.count < 8
+        )
     }
 }
 

@@ -22,6 +22,7 @@
 		D46435A22C24A48D0032FBB1 /* SignUpViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435A12C24A48D0032FBB1 /* SignUpViewRouter.swift */; };
 		D46435A52C24CA940032FBB1 /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435A42C24CA940032FBB1 /* EditTextView.swift */; };
 		D46435AD2C24FCD70032FBB1 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435AC2C24FCD70032FBB1 /* String+Extension.swift */; };
+		D46435AF2C24FF900032FBB1 /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435AE2C24FF8F0032FBB1 /* LoadingButtonView.swift */; };
 		D4F1B2D42C23EF09004EF611 /* HabitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F1B2D32C23EF09004EF611 /* HabitApp.swift */; };
 		D4F1B2D82C23EF0B004EF611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */; };
 		D4F1B2DB2C23EF0B004EF611 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2DA2C23EF0B004EF611 /* Preview Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		D46435A12C24A48D0032FBB1 /* SignUpViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewRouter.swift; sourceTree = "<group>"; };
 		D46435A42C24CA940032FBB1 /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
 		D46435AC2C24FCD70032FBB1 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		D46435AE2C24FF8F0032FBB1 /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
 		D4F1B2D02C23EF09004EF611 /* Habit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F1B2D32C23EF09004EF611 /* HabitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitApp.swift; sourceTree = "<group>"; };
 		D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				D46435A42C24CA940032FBB1 /* EditTextView.swift */,
+				D46435AE2C24FF8F0032FBB1 /* LoadingButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				D46435912C248F950032FBB1 /* HomeViewModel.swift in Sources */,
 				D46435AD2C24FCD70032FBB1 /* String+Extension.swift in Sources */,
 				D46435A22C24A48D0032FBB1 /* SignUpViewRouter.swift in Sources */,
+				D46435AF2C24FF900032FBB1 /* LoadingButtonView.swift in Sources */,
 				D46435A02C24A3E90032FBB1 /* SignUpUIState.swift in Sources */,
 				D4F1B2D42C23EF09004EF611 /* HabitApp.swift in Sources */,
 				D46435832C24776F0032FBB1 /* SignInViewModel.swift in Sources */,
