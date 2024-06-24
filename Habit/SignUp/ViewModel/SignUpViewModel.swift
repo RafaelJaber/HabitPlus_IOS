@@ -25,10 +25,13 @@ class SignUpViewModel: ObservableObject {
     func register() {
         self.uiState = .loading
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.uiState = .success
-            self.publisher.send(true)
-        }
+        WebService.postUser(fullname: fullName, 
+                            email: email,
+                            password: password,
+                            document: document,
+                            phone: phone,
+                            birthday: birthday, // TODO: formatar no input do teclado (dd/MM/yyyy -> yyyy-MM-dd)
+                            gender: gender.index)
     }
     
     func formIsInvalid() -> Bool {
