@@ -46,7 +46,12 @@ class SignUpViewModel: ObservableObject {
                                                    document: document,
                                                    phone: phone,
                                                    birthday: birthday,
-                                                   gender: gender.index))
+                                                   gender: gender.index)) { (successResponse, errorResponse) in
+            if let error = errorResponse {
+                self.uiState = .error(error.detail)
+            }
+            
+        }
     }
     
     func formIsInvalid() -> Bool {

@@ -47,7 +47,6 @@ enum WebService {
         
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             guard let data = data, error == nil else {
-                print(error)
                 completion(.failure(.internalServerError, nil))
                 return
             }
@@ -68,14 +67,13 @@ enum WebService {
         task.resume()
     }
 
-    static func postUser(request: SignUpRequest) {
+    static func postUser(request: SignUpRequest, completion: @escaping (Bool?, ErrorResponse?) -> Void) {
         call(path: .postUser, body: request, completion: { result in
             switch result {
                 case .failure(let error, let data):
                     if let data = data {
-                        print(String(data: data, encoding: .utf8))
-                        let response = try? JSONDecoder().decode(SignUpResponse.self, from: data)
-                        print(response?.detail)
+                        let response = try? JSONDecoder().decode(ErrorResponse.self, from: data)
+                        completion(nil, response)
                     }
                     break
                 case .success(let data):
