@@ -136,7 +136,7 @@ extension SignUpView {
             placeholder: "Data de Nascimento",
             keyboard: .decimalPad,
             error: "Data deve ser dd/MM/yyyy",
-            failure: viewModel.birthday.count != 8,
+            failure: viewModel.birthday.count == 8,
             icon: "birthday.cake"
         )
     }

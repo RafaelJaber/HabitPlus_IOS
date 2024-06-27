@@ -25,13 +25,28 @@ class SignUpViewModel: ObservableObject {
     func register() {
         self.uiState = .loading
         
-        WebService.postUser(fullname: fullName, 
-                            email: email,
-                            password: password,
-                            document: document,
-                            phone: phone,
-                            birthday: birthday, // TODO: formatar no input do teclado (dd/MM/yyyy -> yyyy-MM-dd)
-                            gender: gender.index)
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "dd/MM/yyyy"
+        
+        let dateFormatted = formatter.date(from: birthday)
+        
+        guard let dateFormatted = dateFormatted else {
+            self.uiState = .error("Data inválida \(birthday)")
+            return
+        }
+        
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        let birthday = formatter.string(from: dateFormatted)
+        
+        WebService.postUser(request: SignUpRequest(fullname: fullName,
+                                                   email: email,
+                                                   password: password,
+                                                   document: document,
+                                                   phone: phone,
+                                                   birthday: birthday,
+                                                   gender: gender.index))
     }
     
     func formIsInvalid() -> Bool {
@@ -40,7 +55,7 @@ class SignUpViewModel: ObservableObject {
         fullName.count < 3 ||
         !document.isValidCpf() ||
         phone.count != 11 ||
-        birthday.count != 8
+        birthday.count == 8
     }
     
 }

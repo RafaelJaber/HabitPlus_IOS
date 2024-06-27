@@ -21,24 +21,8 @@ enum WebService {
         return URLRequest(url: url)
     }
 
-    static func postUser(fullname: String,
-                         email: String,
-                         password: String,
-                         document: String,
-                         phone: String,
-                         birthday: String,
-                         gender: Int) {
-        let json: [String : Any] = [
-            "name": fullname,
-            "email": email,
-            "document": document,
-            "phone": phone,
-            "gender": gender,
-            "birthday": birthday,
-            "password": password
-        ]
-        
-        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+    static func postUser(request: SignUpRequest) {
+        guard let jsonData = try? JSONEncoder().encode(request) else { return }
         
         
         guard var urlRequest = completeUrl(path: Endpoint.postUser) else { return }
