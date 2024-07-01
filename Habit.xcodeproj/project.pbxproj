@@ -27,6 +27,9 @@
 		D46435B42C2CE7260032FBB1 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435B32C2CE7260032FBB1 /* SignUpRequest.swift */; };
 		D46435B62C2CF2A50032FBB1 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435B52C2CF2A50032FBB1 /* SignUpResponse.swift */; };
 		D46435B82C2DB42A0032FBB1 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435B72C2DB42A0032FBB1 /* ErrorResponse.swift */; };
+		D46435BA2C2DD86E0032FBB1 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435B92C2DD86E0032FBB1 /* SignInRequest.swift */; };
+		D46435BC2C2DDA5E0032FBB1 /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435BB2C2DDA5E0032FBB1 /* SignInResponse.swift */; };
+		D46435BE2C33409A0032FBB1 /* SignInErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435BD2C33409A0032FBB1 /* SignInErrorResponse.swift */; };
 		D4F1B2D42C23EF09004EF611 /* HabitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F1B2D32C23EF09004EF611 /* HabitApp.swift */; };
 		D4F1B2D82C23EF0B004EF611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */; };
 		D4F1B2DB2C23EF0B004EF611 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2DA2C23EF0B004EF611 /* Preview Assets.xcassets */; };
@@ -55,6 +58,9 @@
 		D46435B32C2CE7260032FBB1 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		D46435B52C2CF2A50032FBB1 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		D46435B72C2DB42A0032FBB1 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		D46435B92C2DD86E0032FBB1 /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
+		D46435BB2C2DDA5E0032FBB1 /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
+		D46435BD2C33409A0032FBB1 /* SignInErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInErrorResponse.swift; sourceTree = "<group>"; };
 		D4F1B2D02C23EF09004EF611 /* Habit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F1B2D32C23EF09004EF611 /* HabitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitApp.swift; sourceTree = "<group>"; };
 		D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				D46435862C2489D80032FBB1 /* SignInUIState.swift */,
+				D46435B92C2DD86E0032FBB1 /* SignInRequest.swift */,
+				D46435BB2C2DDA5E0032FBB1 /* SignInResponse.swift */,
+				D46435BD2C33409A0032FBB1 /* SignInErrorResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -369,12 +378,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4F1B2E82C23F0DA004EF611 /* SplashUIState.swift in Sources */,
+				D46435BE2C33409A0032FBB1 /* SignInErrorResponse.swift in Sources */,
 				D464359A2C24924B0032FBB1 /* SignUpViewModel.swift in Sources */,
 				D46435B42C2CE7260032FBB1 /* SignUpRequest.swift in Sources */,
+				D46435BC2C2DDA5E0032FBB1 /* SignInResponse.swift in Sources */,
 				D46435912C248F950032FBB1 /* HomeViewModel.swift in Sources */,
 				D46435AD2C24FCD70032FBB1 /* String+Extension.swift in Sources */,
 				D46435A22C24A48D0032FBB1 /* SignUpViewRouter.swift in Sources */,
 				D46435AF2C24FF900032FBB1 /* LoadingButtonView.swift in Sources */,
+				D46435BA2C2DD86E0032FBB1 /* SignInRequest.swift in Sources */,
 				D46435A02C24A3E90032FBB1 /* SignUpUIState.swift in Sources */,
 				D4F1B2D42C23EF09004EF611 /* HabitApp.swift in Sources */,
 				D46435832C24776F0032FBB1 /* SignInViewModel.swift in Sources */,
