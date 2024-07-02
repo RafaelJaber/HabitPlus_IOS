@@ -97,6 +97,7 @@ extension HabitView {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         } label: {
             Label("Criar Hábito", systemImage: "plus.app")
+                .modifier(ButtonStyle())
         }
         .padding(.horizontal, 16)
     }
