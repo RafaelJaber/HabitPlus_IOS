@@ -8,11 +8,11 @@
 import Foundation
 import Combine
 
-class RemoteDataSource {
+class SignInRemoteDataSource {
     
     // Padrao Singleton - Única instância desse objeto vivo na aplicação.
     
-    static var shared: RemoteDataSource = RemoteDataSource()
+    static var shared: SignInRemoteDataSource = SignInRemoteDataSource()
     
     private init() {
     }
