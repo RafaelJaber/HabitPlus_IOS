@@ -37,6 +37,7 @@
 		D46435CA2C338C9F0032FBB1 /* SignUpRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435C92C338C9F0032FBB1 /* SignUpRemoteDataSource.swift */; };
 		D46435CC2C339DEE0032FBB1 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435CB2C339DEE0032FBB1 /* UserAuth.swift */; };
 		D46435CE2C339F1E0032FBB1 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435CD2C339F1E0032FBB1 /* LocalDataSource.swift */; };
+		D46435D12C343C260032FBB1 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435D02C343C260032FBB1 /* SplashInteractor.swift */; };
 		D4F1B2D42C23EF09004EF611 /* HabitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F1B2D32C23EF09004EF611 /* HabitApp.swift */; };
 		D4F1B2D82C23EF0B004EF611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */; };
 		D4F1B2DB2C23EF0B004EF611 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2DA2C23EF0B004EF611 /* Preview Assets.xcassets */; };
@@ -75,6 +76,7 @@
 		D46435C92C338C9F0032FBB1 /* SignUpRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRemoteDataSource.swift; sourceTree = "<group>"; };
 		D46435CB2C339DEE0032FBB1 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 		D46435CD2C339F1E0032FBB1 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
+		D46435D02C343C260032FBB1 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
 		D4F1B2D02C23EF09004EF611 /* Habit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F1B2D32C23EF09004EF611 /* HabitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitApp.swift; sourceTree = "<group>"; };
 		D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -279,6 +281,14 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		D46435CF2C343C100032FBB1 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D46435D02C343C260032FBB1 /* SplashInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		D4F1B2C72C23EF08004EF611 = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +331,7 @@
 		D4F1B2E12C23EF8E004EF611 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				D46435CF2C343C100032FBB1 /* Interactor */,
 				D4F1B2E22C23EFA9004EF611 /* View */,
 				D46435792C245F1E0032FBB1 /* ViewModel */,
 				D4F1B2E32C23EFB0004EF611 /* Model */,
@@ -427,6 +438,7 @@
 				D46435C12C336F400032FBB1 /* SignInInteractor.swift in Sources */,
 				D46435AF2C24FF900032FBB1 /* LoadingButtonView.swift in Sources */,
 				D46435BA2C2DD86E0032FBB1 /* SignInRequest.swift in Sources */,
+				D46435D12C343C260032FBB1 /* SplashInteractor.swift in Sources */,
 				D46435A02C24A3E90032FBB1 /* SignUpUIState.swift in Sources */,
 				D4F1B2D42C23EF09004EF611 /* HabitApp.swift in Sources */,
 				D46435832C24776F0032FBB1 /* SignInViewModel.swift in Sources */,

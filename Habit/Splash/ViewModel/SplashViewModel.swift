@@ -6,18 +6,37 @@
 //
 
 import SwiftUI
+import Combine
 
 class SplashViewModel:ObservableObject {
     
     @Published var uiState: SplashUIState = .loading
     
+    private var cancellableAuth: AnyCancellable?
+    
+    private let interactor: SplashInteractor
+    
+    init(interactor: SplashInteractor) {
+        self.interactor = interactor
+    }
+    
+    deinit {
+        cancellableAuth?.cancel()
+    }
+    
     func onAppear() {
-//        faz algo assincrono e muda o estado da uiState
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//            self.uiState = .error("Algo deu errado aqui")
-            self.uiState = .goToSignInScreen
-        }
+        cancellableAuth = interactor.fetchAuth()
+            .delay(for: .seconds(2), scheduler: RunLoop.main)
+            .receive(on: DispatchQueue.main)
+            .sink { userAuth in
+                if (userAuth == nil) {
+                    self.uiState = .goToSignInScreen
+                } else if (Date().timeIntervalSince1970 > Date().timeIntervalSince1970 + Double(userAuth!.expires)) {
+                    // chamar refresh token na API
+                } else {
+                    self.uiState = .goToHomeScreen
+                }
+            }
     }
     
 }
@@ -25,5 +44,8 @@ class SplashViewModel:ObservableObject {
 extension SplashViewModel {
     func signInView() -> some View {
         return SplashViewRouter.makeSignInView()
+    }
+    func homeView() -> some View {
+        return SplashViewRouter.makeHomeView()
     }
 }
