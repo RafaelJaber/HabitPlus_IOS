@@ -32,6 +32,7 @@
 		D46435BE2C33409A0032FBB1 /* SignInErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435BD2C33409A0032FBB1 /* SignInErrorResponse.swift */; };
 		D46435C12C336F400032FBB1 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435C02C336F400032FBB1 /* SignInInteractor.swift */; };
 		D46435C32C3372BB0032FBB1 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435C22C3372BB0032FBB1 /* RemoteDataSource.swift */; };
+		D46435C52C3386BD0032FBB1 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435C42C3386BD0032FBB1 /* AppError.swift */; };
 		D4F1B2D42C23EF09004EF611 /* HabitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F1B2D32C23EF09004EF611 /* HabitApp.swift */; };
 		D4F1B2D82C23EF0B004EF611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */; };
 		D4F1B2DB2C23EF0B004EF611 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2DA2C23EF0B004EF611 /* Preview Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		D46435BD2C33409A0032FBB1 /* SignInErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInErrorResponse.swift; sourceTree = "<group>"; };
 		D46435C02C336F400032FBB1 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		D46435C22C3372BB0032FBB1 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		D46435C42C3386BD0032FBB1 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		D4F1B2D02C23EF09004EF611 /* Habit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F1B2D32C23EF09004EF611 /* HabitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitApp.swift; sourceTree = "<group>"; };
 		D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			children = (
 				D464359D2C249F320032FBB1 /* Gender.swift */,
 				D46435B72C2DB42A0032FBB1 /* ErrorResponse.swift */,
+				D46435C42C3386BD0032FBB1 /* AppError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				D46435A52C24CA940032FBB1 /* EditTextView.swift in Sources */,
 				D46435852C24784B0032FBB1 /* SplashViewRouter.swift in Sources */,
 				D46435B22C2525850032FBB1 /* WebService.swift in Sources */,
+				D46435C52C3386BD0032FBB1 /* AppError.swift in Sources */,
 				D46435812C2477380032FBB1 /* SignInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

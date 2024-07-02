@@ -11,6 +11,8 @@ import Combine
 class SignInViewModel: ObservableObject {
     
     private var cancellable: AnyCancellable?
+    private var cancellableRequest: AnyCancellable?
+    
     private var publisher = PassthroughSubject<Bool, Never>()
     private let interactor: SignInInteractor
     
@@ -32,26 +34,28 @@ class SignInViewModel: ObservableObject {
     
     deinit {
         cancellable?.cancel()
+        cancellableRequest?.cancel()
     }
     
     func login() {
         self.uiState = .loading
         
-        interactor.login(loginRequest: SignInRequest(email: email,
-                                                     password: password)) { (successResponse, errorResponse) in
-            if let error = errorResponse {
-                DispatchQueue.main.async {
-                    self.uiState = .error(error.detail.message)
+        cancellableRequest = interactor.login(loginRequest: SignInRequest(email: email, password: password))
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                // aqui acontece o ERROR ou FINISHED
+                switch(completion) {
+                    case .failure(let appError):
+                        self.uiState = SignInUIState.error(appError.message)
+                        break
+                    case .finished:
+                        break
                 }
+            } receiveValue: { success in
+                // aqui acontece o SUCESSO
+                print(success)
+                self.uiState = .goToHomeScreen
             }
-            
-            if let success = successResponse {
-                DispatchQueue.main.async {
-                    print(success)
-                    self.uiState = .goToHomeScreen
-                }
-            }
-        }
     }
     
     func formIsInvalid() -> Bool {

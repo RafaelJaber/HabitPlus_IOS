@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class RemoteDataSource {
     
@@ -16,24 +17,33 @@ class RemoteDataSource {
     private init() {
     }
     
-    func login(request: SignInRequest, completion: @escaping (SignInResponse?, SignInErrorResponse?) -> Void) {
-        WebService.call(path: .login, params: [
-            URLQueryItem(name: "username", value: request.email),
-            URLQueryItem(name: "password", value: request.password),
-        ]) {result in
-            switch result {
-                case .failure(let error, let data):
-                    if let data = data {
-                        if error == .unauthorized {
-                            let response = try? JSONDecoder().decode(SignInErrorResponse.self, from: data)
-                            completion(nil, response)
+    func login(request: SignInRequest) -> Future<SignInResponse, AppError> {
+        return Future<SignInResponse, AppError> { promise in
+            WebService.call(path: .login, params: [
+                URLQueryItem(name: "username", value: request.email),
+                URLQueryItem(name: "password", value: request.password),
+            ]) {result in
+                switch result {
+                    case .failure(let error, let data):
+                        if let data = data {
+                            if error == .unauthorized {
+                                let response = try? JSONDecoder().decode(SignInErrorResponse.self, from: data)
+//                                completion(nil, response)
+                                promise(.failure(AppError.response(message: response?.detail.message ?? "Erro desconhecido no servidor")))
+                            }
                         }
-                    }
-                    break
-                case.success(let data):
-                    let response = try? JSONDecoder().decode(SignInResponse.self, from: data)
-                    completion(response, nil)
-                    break
+                        break
+                    case.success(let data):
+                        let response = try? JSONDecoder().decode(SignInResponse.self, from: data)
+//                        completion(response, nil)
+                        
+                        guard let response = response else {
+                            print("Log: Error parser \(String(data: data, encoding: .utf8))")
+                            return
+                        }
+                        promise(.success(response))
+                        break
+                }
             }
         }
     }
