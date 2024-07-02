@@ -11,8 +11,31 @@ struct HomeView: View {
     
     @ObservedObject var viewModel: HomeViewModel
     
+    @State var selection = 0
+    
     var body: some View {
-        Text("Tela Inicial")
+        TabView(selection: $selection) {
+            viewModel.habitView()
+                .tabItem {
+                    Image(systemName: "rectangle.grid.2x2")
+                    Text("Hábitos")
+                }.tag(0)
+            Text("Conteúdo de gráficos \(selection)")
+                .tabItem {
+                    Image(systemName: "chart.bar")
+                    Text("Gráficos")
+                }.tag(1)
+            
+            Text("Conteúdo do Perfil \(selection)")
+                .tabItem {
+                    Image(systemName: "person.crop.circle")
+                    Text("Perfil")
+                }.tag(2)
+        }
+        .onAppear() {
+            UITabBar.appearance().backgroundColor = UIColor(named: "backgroundColor")
+        }
+        .tint(Color("primaryColor"))
     }
 }
 

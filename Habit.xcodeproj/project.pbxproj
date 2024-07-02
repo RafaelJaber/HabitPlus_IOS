@@ -40,6 +40,10 @@
 		D46435D12C343C260032FBB1 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435D02C343C260032FBB1 /* SplashInteractor.swift */; };
 		D46435D32C3459010032FBB1 /* RefreshRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435D22C3459010032FBB1 /* RefreshRequest.swift */; };
 		D46435D52C345D2D0032FBB1 /* SplashRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435D42C345D2D0032FBB1 /* SplashRemoteDataSource.swift */; };
+		D46435D72C348F340032FBB1 /* HomeViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435D62C348F340032FBB1 /* HomeViewRouter.swift */; };
+		D46435DD2C3497820032FBB1 /* HabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435DC2C3497820032FBB1 /* HabitView.swift */; };
+		D46435DF2C3497AA0032FBB1 /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435DE2C3497AA0032FBB1 /* HabitViewModel.swift */; };
+		D46435E12C34ACC80032FBB1 /* HabitUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435E02C34ACC80032FBB1 /* HabitUIState.swift */; };
 		D4F1B2D42C23EF09004EF611 /* HabitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F1B2D32C23EF09004EF611 /* HabitApp.swift */; };
 		D4F1B2D82C23EF0B004EF611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */; };
 		D4F1B2DB2C23EF0B004EF611 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2DA2C23EF0B004EF611 /* Preview Assets.xcassets */; };
@@ -81,6 +85,10 @@
 		D46435D02C343C260032FBB1 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
 		D46435D22C3459010032FBB1 /* RefreshRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshRequest.swift; sourceTree = "<group>"; };
 		D46435D42C345D2D0032FBB1 /* SplashRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRemoteDataSource.swift; sourceTree = "<group>"; };
+		D46435D62C348F340032FBB1 /* HomeViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRouter.swift; sourceTree = "<group>"; };
+		D46435DC2C3497820032FBB1 /* HabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitView.swift; sourceTree = "<group>"; };
+		D46435DE2C3497AA0032FBB1 /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
+		D46435E02C34ACC80032FBB1 /* HabitUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitUIState.swift; sourceTree = "<group>"; };
 		D4F1B2D02C23EF09004EF611 /* Habit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F1B2D32C23EF09004EF611 /* HabitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitApp.swift; sourceTree = "<group>"; };
 		D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -169,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				D46435902C248F950032FBB1 /* HomeViewModel.swift */,
+				D46435D62C348F340032FBB1 /* HomeViewRouter.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -294,6 +303,40 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		D46435D82C3497680032FBB1 /* Habit */ = {
+			isa = PBXGroup;
+			children = (
+				D46435DB2C34977A0032FBB1 /* View */,
+				D46435DA2C3497730032FBB1 /* ViewModel */,
+				D46435D92C34976F0032FBB1 /* Model */,
+			);
+			path = Habit;
+			sourceTree = "<group>";
+		};
+		D46435D92C34976F0032FBB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D46435E02C34ACC80032FBB1 /* HabitUIState.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D46435DA2C3497730032FBB1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D46435DE2C3497AA0032FBB1 /* HabitViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D46435DB2C34977A0032FBB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D46435DC2C3497820032FBB1 /* HabitView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D4F1B2C72C23EF08004EF611 = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +356,7 @@
 		D4F1B2D22C23EF09004EF611 /* Habit */ = {
 			isa = PBXGroup;
 			children = (
+				D46435D82C3497680032FBB1 /* Habit */,
 				D464359B2C249F1E0032FBB1 /* Common */,
 				D46435922C2491FB0032FBB1 /* SignUp */,
 				D464358A2C248F690032FBB1 /* Home */,
@@ -443,6 +487,7 @@
 				D46435D52C345D2D0032FBB1 /* SplashRemoteDataSource.swift in Sources */,
 				D46435CA2C338C9F0032FBB1 /* SignUpRemoteDataSource.swift in Sources */,
 				D46435C12C336F400032FBB1 /* SignInInteractor.swift in Sources */,
+				D46435DF2C3497AA0032FBB1 /* HabitViewModel.swift in Sources */,
 				D46435AF2C24FF900032FBB1 /* LoadingButtonView.swift in Sources */,
 				D46435BA2C2DD86E0032FBB1 /* SignInRequest.swift in Sources */,
 				D46435D12C343C260032FBB1 /* SplashInteractor.swift in Sources */,
@@ -450,6 +495,7 @@
 				D4F1B2D42C23EF09004EF611 /* HabitApp.swift in Sources */,
 				D46435832C24776F0032FBB1 /* SignInViewModel.swift in Sources */,
 				D46435982C2492430032FBB1 /* SignUpView.swift in Sources */,
+				D46435E12C34ACC80032FBB1 /* HabitUIState.swift in Sources */,
 				D464359E2C249F320032FBB1 /* Gender.swift in Sources */,
 				D464358F2C248F890032FBB1 /* HomeView.swift in Sources */,
 				D46435892C248F0B0032FBB1 /* SignInViewRouter.swift in Sources */,
@@ -458,10 +504,12 @@
 				D4F1B2E62C23EFE8004EF611 /* SplashView.swift in Sources */,
 				D464357B2C245F4F0032FBB1 /* SplashViewModel.swift in Sources */,
 				D46435B82C2DB42A0032FBB1 /* ErrorResponse.swift in Sources */,
+				D46435DD2C3497820032FBB1 /* HabitView.swift in Sources */,
 				D46435872C2489D80032FBB1 /* SignInUIState.swift in Sources */,
 				D46435A52C24CA940032FBB1 /* EditTextView.swift in Sources */,
 				D46435CC2C339DEE0032FBB1 /* UserAuth.swift in Sources */,
 				D46435852C24784B0032FBB1 /* SplashViewRouter.swift in Sources */,
+				D46435D72C348F340032FBB1 /* HomeViewRouter.swift in Sources */,
 				D46435B22C2525850032FBB1 /* WebService.swift in Sources */,
 				D46435C52C3386BD0032FBB1 /* AppError.swift in Sources */,
 				D46435CE2C339F1E0032FBB1 /* LocalDataSource.swift in Sources */,
