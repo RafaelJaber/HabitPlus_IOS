@@ -30,6 +30,8 @@
 		D46435BA2C2DD86E0032FBB1 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435B92C2DD86E0032FBB1 /* SignInRequest.swift */; };
 		D46435BC2C2DDA5E0032FBB1 /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435BB2C2DDA5E0032FBB1 /* SignInResponse.swift */; };
 		D46435BE2C33409A0032FBB1 /* SignInErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435BD2C33409A0032FBB1 /* SignInErrorResponse.swift */; };
+		D46435C12C336F400032FBB1 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435C02C336F400032FBB1 /* SignInInteractor.swift */; };
+		D46435C32C3372BB0032FBB1 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435C22C3372BB0032FBB1 /* RemoteDataSource.swift */; };
 		D4F1B2D42C23EF09004EF611 /* HabitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F1B2D32C23EF09004EF611 /* HabitApp.swift */; };
 		D4F1B2D82C23EF0B004EF611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */; };
 		D4F1B2DB2C23EF0B004EF611 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2DA2C23EF0B004EF611 /* Preview Assets.xcassets */; };
@@ -61,6 +63,8 @@
 		D46435B92C2DD86E0032FBB1 /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
 		D46435BB2C2DDA5E0032FBB1 /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
 		D46435BD2C33409A0032FBB1 /* SignInErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInErrorResponse.swift; sourceTree = "<group>"; };
+		D46435C02C336F400032FBB1 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
+		D46435C22C3372BB0032FBB1 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
 		D4F1B2D02C23EF09004EF611 /* Habit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F1B2D32C23EF09004EF611 /* HabitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitApp.swift; sourceTree = "<group>"; };
 		D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 		D464357C2C2476DB0032FBB1 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				D46435BF2C336F350032FBB1 /* interactor */,
 				D464357D2C2476EE0032FBB1 /* View */,
 				D464357E2C2476F30032FBB1 /* ViewModel */,
 				D464357F2C2476FA0032FBB1 /* Model */,
@@ -238,8 +243,17 @@
 			isa = PBXGroup;
 			children = (
 				D46435B12C2525850032FBB1 /* WebService.swift */,
+				D46435C22C3372BB0032FBB1 /* RemoteDataSource.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		D46435BF2C336F350032FBB1 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D46435C02C336F400032FBB1 /* SignInInteractor.swift */,
+			);
+			path = interactor;
 			sourceTree = "<group>";
 		};
 		D4F1B2C72C23EF08004EF611 = {
@@ -385,6 +399,8 @@
 				D46435912C248F950032FBB1 /* HomeViewModel.swift in Sources */,
 				D46435AD2C24FCD70032FBB1 /* String+Extension.swift in Sources */,
 				D46435A22C24A48D0032FBB1 /* SignUpViewRouter.swift in Sources */,
+				D46435C32C3372BB0032FBB1 /* RemoteDataSource.swift in Sources */,
+				D46435C12C336F400032FBB1 /* SignInInteractor.swift in Sources */,
 				D46435AF2C24FF900032FBB1 /* LoadingButtonView.swift in Sources */,
 				D46435BA2C2DD86E0032FBB1 /* SignInRequest.swift in Sources */,
 				D46435A02C24A3E90032FBB1 /* SignUpUIState.swift in Sources */,
