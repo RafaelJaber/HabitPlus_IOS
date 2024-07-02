@@ -12,6 +12,7 @@ class SignInViewModel: ObservableObject {
     
     private var cancellable: AnyCancellable?
     private var cancellableRequest: AnyCancellable?
+    private var cancellableTest: AnyCancellable?
     
     private var publisher = PassthroughSubject<Bool, Never>()
     private let interactor: SignInInteractor
@@ -19,6 +20,8 @@ class SignInViewModel: ObservableObject {
     @Published var uiState: SignInUIState = .none
     @Published var email = ""
     @Published var password = ""
+    
+    @Published var testToken = ""
     
     init(interactor: SignInInteractor) {
         self.interactor = interactor
@@ -35,6 +38,7 @@ class SignInViewModel: ObservableObject {
     deinit {
         cancellable?.cancel()
         cancellableRequest?.cancel()
+        cancellableTest?.cancel()
     }
     
     func login() {
@@ -53,13 +57,26 @@ class SignInViewModel: ObservableObject {
                 }
             } receiveValue: { success in
                 // aqui acontece o SUCESSO
-                print(success)
+                let auth = UserAuth(idToken: success.accessToken,
+                                    refreshToken: success.refreshToken,
+                                    expires: success.expires,
+                                    tokenType: success.tokenType)
+                self.interactor.insertAuth(userAuth: auth)
+                
                 self.uiState = .goToHomeScreen
             }
     }
     
     func formIsInvalid() -> Bool {
         return !email.isEmail() || password.count < 8
+    }
+    
+    func testRequest() {
+        cancellableTest = interactor.fetchAuth()
+            .receive(on: DispatchQueue.main)
+            .sink { userAuth in
+                self.testToken = userAuth?.idToken ?? "token ainda não registrado"
+            }
     }
 }
 

@@ -28,7 +28,7 @@ struct SignInView: View {
                                     .scaledToFit()
                                     .padding(.horizontal, 48)
                                 
-                                Text("Login")
+                                Text(viewModel.testToken)
                                     .foregroundStyle(Color("primaryColor"))
                                     .font(Font.system(.title).bold())
                                     .padding(.bottom, 8)
@@ -63,6 +63,7 @@ struct SignInView: View {
                     .navigationBarHidden(navigationHidden)
                 }
                 .onAppear {
+                    self.viewModel.testRequest()
                     self.navigationHidden = true
                 }
                 .onDisappear {
