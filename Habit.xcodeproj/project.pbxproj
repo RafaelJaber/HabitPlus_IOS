@@ -38,6 +38,8 @@
 		D46435CC2C339DEE0032FBB1 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435CB2C339DEE0032FBB1 /* UserAuth.swift */; };
 		D46435CE2C339F1E0032FBB1 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435CD2C339F1E0032FBB1 /* LocalDataSource.swift */; };
 		D46435D12C343C260032FBB1 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435D02C343C260032FBB1 /* SplashInteractor.swift */; };
+		D46435D32C3459010032FBB1 /* RefreshRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435D22C3459010032FBB1 /* RefreshRequest.swift */; };
+		D46435D52C345D2D0032FBB1 /* SplashRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435D42C345D2D0032FBB1 /* SplashRemoteDataSource.swift */; };
 		D4F1B2D42C23EF09004EF611 /* HabitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F1B2D32C23EF09004EF611 /* HabitApp.swift */; };
 		D4F1B2D82C23EF0B004EF611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */; };
 		D4F1B2DB2C23EF0B004EF611 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2DA2C23EF0B004EF611 /* Preview Assets.xcassets */; };
@@ -77,6 +79,8 @@
 		D46435CB2C339DEE0032FBB1 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 		D46435CD2C339F1E0032FBB1 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		D46435D02C343C260032FBB1 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
+		D46435D22C3459010032FBB1 /* RefreshRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshRequest.swift; sourceTree = "<group>"; };
+		D46435D42C345D2D0032FBB1 /* SplashRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRemoteDataSource.swift; sourceTree = "<group>"; };
 		D4F1B2D02C23EF09004EF611 /* Habit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F1B2D32C23EF09004EF611 /* HabitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitApp.swift; sourceTree = "<group>"; };
 		D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -285,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				D46435D02C343C260032FBB1 /* SplashInteractor.swift */,
+				D46435D42C345D2D0032FBB1 /* SplashRemoteDataSource.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				D4F1B2E72C23F0DA004EF611 /* SplashUIState.swift */,
+				D46435D22C3459010032FBB1 /* RefreshRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -434,6 +440,7 @@
 				D46435AD2C24FCD70032FBB1 /* String+Extension.swift in Sources */,
 				D46435A22C24A48D0032FBB1 /* SignUpViewRouter.swift in Sources */,
 				D46435C32C3372BB0032FBB1 /* SignInRemoteDataSource.swift in Sources */,
+				D46435D52C345D2D0032FBB1 /* SplashRemoteDataSource.swift in Sources */,
 				D46435CA2C338C9F0032FBB1 /* SignUpRemoteDataSource.swift in Sources */,
 				D46435C12C336F400032FBB1 /* SignInInteractor.swift in Sources */,
 				D46435AF2C24FF900032FBB1 /* LoadingButtonView.swift in Sources */,
@@ -447,6 +454,7 @@
 				D464358F2C248F890032FBB1 /* HomeView.swift in Sources */,
 				D46435892C248F0B0032FBB1 /* SignInViewRouter.swift in Sources */,
 				D46435B62C2CF2A50032FBB1 /* SignUpResponse.swift in Sources */,
+				D46435D32C3459010032FBB1 /* RefreshRequest.swift in Sources */,
 				D4F1B2E62C23EFE8004EF611 /* SplashView.swift in Sources */,
 				D464357B2C245F4F0032FBB1 /* SplashViewModel.swift in Sources */,
 				D46435B82C2DB42A0032FBB1 /* ErrorResponse.swift in Sources */,
