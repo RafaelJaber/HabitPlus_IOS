@@ -47,6 +47,22 @@ extension String {
         
         return temp1 == d1 && temp2 == d2
     }
+    
+    func toDate(sourcePattern source: String, destPattern dest: String) -> String? {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = source
+        
+        let dateFormatted = formatter.date(from: self)
+        
+        guard let dateFormatted = dateFormatted else {
+          return nil
+        }
+        
+        formatter.dateFormat = dest
+        return formatter.string(from: dateFormatted)
+      }
+
 }
 
 

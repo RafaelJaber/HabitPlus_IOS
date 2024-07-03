@@ -47,6 +47,10 @@
 		D46435E42C34C48E0032FBB1 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435E32C34C48E0032FBB1 /* ButtonStyle.swift */; };
 		D46435E62C34D40B0032FBB1 /* HabitCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435E52C34D40B0032FBB1 /* HabitCardViewModel.swift */; };
 		D46435E82C34D53E0032FBB1 /* HabitCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435E72C34D53E0032FBB1 /* HabitCardView.swift */; };
+		D4C56C3A2C3503D500E35741 /* HabitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C56C392C3503D500E35741 /* HabitResponse.swift */; };
+		D4C56C3D2C3505AB00E35741 /* HabitRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C56C3C2C3505AB00E35741 /* HabitRemoteDataSource.swift */; };
+		D4C56C3F2C3506AA00E35741 /* HabitInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C56C3E2C3506AA00E35741 /* HabitInteractor.swift */; };
+		D4C56C412C35C09100E35741 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C56C402C35C09100E35741 /* Date+Extension.swift */; };
 		D4F1B2D42C23EF09004EF611 /* HabitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F1B2D32C23EF09004EF611 /* HabitApp.swift */; };
 		D4F1B2D82C23EF0B004EF611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */; };
 		D4F1B2DB2C23EF0B004EF611 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2DA2C23EF0B004EF611 /* Preview Assets.xcassets */; };
@@ -95,6 +99,10 @@
 		D46435E32C34C48E0032FBB1 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		D46435E52C34D40B0032FBB1 /* HabitCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardViewModel.swift; sourceTree = "<group>"; };
 		D46435E72C34D53E0032FBB1 /* HabitCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardView.swift; sourceTree = "<group>"; };
+		D4C56C392C3503D500E35741 /* HabitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitResponse.swift; sourceTree = "<group>"; };
+		D4C56C3C2C3505AB00E35741 /* HabitRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRemoteDataSource.swift; sourceTree = "<group>"; };
+		D4C56C3E2C3506AA00E35741 /* HabitInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitInteractor.swift; sourceTree = "<group>"; };
+		D4C56C402C35C09100E35741 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		D4F1B2D02C23EF09004EF611 /* Habit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F1B2D32C23EF09004EF611 /* HabitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitApp.swift; sourceTree = "<group>"; };
 		D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -270,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				D46435AC2C24FCD70032FBB1 /* String+Extension.swift */,
+				D4C56C402C35C09100E35741 /* Date+Extension.swift */,
 			);
 			path = Lang;
 			sourceTree = "<group>";
@@ -313,6 +322,7 @@
 		D46435D82C3497680032FBB1 /* Habit */ = {
 			isa = PBXGroup;
 			children = (
+				D4C56C3B2C35059400E35741 /* Interactor */,
 				D46435DB2C34977A0032FBB1 /* View */,
 				D46435DA2C3497730032FBB1 /* ViewModel */,
 				D46435D92C34976F0032FBB1 /* Model */,
@@ -324,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				D46435E02C34ACC80032FBB1 /* HabitUIState.swift */,
+				D4C56C392C3503D500E35741 /* HabitResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -352,6 +363,15 @@
 				D46435E32C34C48E0032FBB1 /* ButtonStyle.swift */,
 			);
 			path = Modifier;
+			sourceTree = "<group>";
+		};
+		D4C56C3B2C35059400E35741 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D4C56C3C2C3505AB00E35741 /* HabitRemoteDataSource.swift */,
+				D4C56C3E2C3506AA00E35741 /* HabitInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		D4F1B2C72C23EF08004EF611 = {
@@ -509,9 +529,11 @@
 				D46435AF2C24FF900032FBB1 /* LoadingButtonView.swift in Sources */,
 				D46435BA2C2DD86E0032FBB1 /* SignInRequest.swift in Sources */,
 				D46435D12C343C260032FBB1 /* SplashInteractor.swift in Sources */,
+				D4C56C3A2C3503D500E35741 /* HabitResponse.swift in Sources */,
 				D46435A02C24A3E90032FBB1 /* SignUpUIState.swift in Sources */,
 				D4F1B2D42C23EF09004EF611 /* HabitApp.swift in Sources */,
 				D46435832C24776F0032FBB1 /* SignInViewModel.swift in Sources */,
+				D4C56C3F2C3506AA00E35741 /* HabitInteractor.swift in Sources */,
 				D46435982C2492430032FBB1 /* SignUpView.swift in Sources */,
 				D46435E12C34ACC80032FBB1 /* HabitUIState.swift in Sources */,
 				D464359E2C249F320032FBB1 /* Gender.swift in Sources */,
@@ -525,6 +547,7 @@
 				D46435DD2C3497820032FBB1 /* HabitView.swift in Sources */,
 				D46435872C2489D80032FBB1 /* SignInUIState.swift in Sources */,
 				D46435E62C34D40B0032FBB1 /* HabitCardViewModel.swift in Sources */,
+				D4C56C3D2C3505AB00E35741 /* HabitRemoteDataSource.swift in Sources */,
 				D46435A52C24CA940032FBB1 /* EditTextView.swift in Sources */,
 				D46435CC2C339DEE0032FBB1 /* UserAuth.swift in Sources */,
 				D46435852C24784B0032FBB1 /* SplashViewRouter.swift in Sources */,
@@ -534,6 +557,7 @@
 				D46435CE2C339F1E0032FBB1 /* LocalDataSource.swift in Sources */,
 				D46435E42C34C48E0032FBB1 /* ButtonStyle.swift in Sources */,
 				D46435C82C338BE60032FBB1 /* SignUpInteractor.swift in Sources */,
+				D4C56C412C35C09100E35741 /* Date+Extension.swift in Sources */,
 				D46435812C2477380032FBB1 /* SignInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

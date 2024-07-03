@@ -15,6 +15,8 @@ enum WebService {
         case postUser = "/users"
         case login = "/auth/login"
         case refreshToken = "/auth/refresh-token"
+        
+        case habits = "/users/me/habits"
     }
     
     enum NetworkError {
@@ -91,6 +93,17 @@ enum WebService {
                 }
                 task.resume()
             }
+    }
+    
+    public static func call(path: Endpoint,
+                            method: Method = .post,
+                            completion: @escaping (Result) -> Void) {
+
+      call(path: path,
+           method: method,
+           contentType: .json,
+           data: nil,
+           completion: completion)
     }
     
     public static func call<T: Encodable>(path: Endpoint,

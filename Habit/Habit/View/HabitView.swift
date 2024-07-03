@@ -131,5 +131,5 @@ extension HabitView {
 }
 
 #Preview {
-    HabitView(viewModel: HabitViewModel())
+    HabitView(viewModel: HabitViewModel(interactor: HabitInteractor()))
 }
