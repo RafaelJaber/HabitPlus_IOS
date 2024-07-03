@@ -45,6 +45,8 @@
 		D46435DF2C3497AA0032FBB1 /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435DE2C3497AA0032FBB1 /* HabitViewModel.swift */; };
 		D46435E12C34ACC80032FBB1 /* HabitUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435E02C34ACC80032FBB1 /* HabitUIState.swift */; };
 		D46435E42C34C48E0032FBB1 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435E32C34C48E0032FBB1 /* ButtonStyle.swift */; };
+		D46435E62C34D40B0032FBB1 /* HabitCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435E52C34D40B0032FBB1 /* HabitCardViewModel.swift */; };
+		D46435E82C34D53E0032FBB1 /* HabitCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46435E72C34D53E0032FBB1 /* HabitCardView.swift */; };
 		D4F1B2D42C23EF09004EF611 /* HabitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F1B2D32C23EF09004EF611 /* HabitApp.swift */; };
 		D4F1B2D82C23EF0B004EF611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */; };
 		D4F1B2DB2C23EF0B004EF611 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F1B2DA2C23EF0B004EF611 /* Preview Assets.xcassets */; };
@@ -91,6 +93,8 @@
 		D46435DE2C3497AA0032FBB1 /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
 		D46435E02C34ACC80032FBB1 /* HabitUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitUIState.swift; sourceTree = "<group>"; };
 		D46435E32C34C48E0032FBB1 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		D46435E52C34D40B0032FBB1 /* HabitCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardViewModel.swift; sourceTree = "<group>"; };
+		D46435E72C34D53E0032FBB1 /* HabitCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardView.swift; sourceTree = "<group>"; };
 		D4F1B2D02C23EF09004EF611 /* Habit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F1B2D32C23EF09004EF611 /* HabitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitApp.swift; sourceTree = "<group>"; };
 		D4F1B2D72C23EF0B004EF611 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -328,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				D46435DE2C3497AA0032FBB1 /* HabitViewModel.swift */,
+				D46435E52C34D40B0032FBB1 /* HabitCardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				D46435DC2C3497820032FBB1 /* HabitView.swift */,
+				D46435E72C34D53E0032FBB1 /* HabitCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -486,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D46435E82C34D53E0032FBB1 /* HabitCardView.swift in Sources */,
 				D4F1B2E82C23F0DA004EF611 /* SplashUIState.swift in Sources */,
 				D46435BE2C33409A0032FBB1 /* SignInErrorResponse.swift in Sources */,
 				D464359A2C24924B0032FBB1 /* SignUpViewModel.swift in Sources */,
@@ -517,6 +524,7 @@
 				D46435B82C2DB42A0032FBB1 /* ErrorResponse.swift in Sources */,
 				D46435DD2C3497820032FBB1 /* HabitView.swift in Sources */,
 				D46435872C2489D80032FBB1 /* SignInUIState.swift in Sources */,
+				D46435E62C34D40B0032FBB1 /* HabitCardViewModel.swift in Sources */,
 				D46435A52C24CA940032FBB1 /* EditTextView.swift in Sources */,
 				D46435CC2C339DEE0032FBB1 /* UserAuth.swift in Sources */,
 				D46435852C24784B0032FBB1 /* SplashViewRouter.swift in Sources */,
