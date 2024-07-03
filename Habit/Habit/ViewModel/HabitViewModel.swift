@@ -60,8 +60,9 @@ class HabitViewModel: ObservableObject {
                             self.title = "Muito bom!"
                             self.headline = "Seus hábitos estão em dia"
                             self.desc = ""
-
-                            if lastDate < Date().toString(destPattern: "dd/MM/yyyy") {
+                            
+                            let dateToCompare = $0.lastDate?.toDate(sourcePattern: "yyyy-MM-dd'T'HH:mm:ss") ?? Date()
+                            if dateToCompare < Date() {
                                 state = .red
                                 self.title = "Atenção"
                                 self.headline = "Fique ligado!"
