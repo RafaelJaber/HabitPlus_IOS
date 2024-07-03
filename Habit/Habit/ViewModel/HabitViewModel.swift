@@ -52,6 +52,7 @@ class HabitViewModel: ObservableObject {
                                             state: .green))
             
             self.uiState = .fullList(rows)
+//            self.uiState = .error("Falha interna no servidor")
                         
         }
     }
