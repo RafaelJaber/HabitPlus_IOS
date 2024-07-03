@@ -33,7 +33,17 @@ struct HomeView: View {
                 }.tag(2)
         }
         .onAppear() {
-            UITabBar.appearance().backgroundColor = UIColor(named: "backgroundColor")
+            let tabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.configureWithDefaultBackground()
+            tabBarAppearance.backgroundEffect = UIBlurEffect(style: .systemMaterial)
+            tabBarAppearance.backgroundColor = UIColor(named: "backgroundColor")?.withAlphaComponent(0.1)
+            
+            UITabBar.appearance().standardAppearance = tabBarAppearance
+            if #available(iOS 15.0, *) {
+                UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+            }
+            
+            UITabBar.appearance().isTranslucent = true
         }
         .tint(Color("primaryColor"))
     }

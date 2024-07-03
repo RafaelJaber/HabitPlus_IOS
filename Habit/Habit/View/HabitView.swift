@@ -39,7 +39,20 @@ struct HabitView: View {
                                     Text("Nenhum hábito encontrado :(")
                                 }
                                 
-                            } else if case HabitUIState.fullList = viewModel.uiState {
+                            } else if case HabitUIState.fullList(let rows) = viewModel.uiState {
+                                
+                                LazyVStack {
+                                    
+                                    ForEach(rows) { row in
+                                        HabitCardView.init(viewModel: row)
+                                    }
+                                    
+                                }
+                                .padding(.horizontal, 14)
+                                .navigationDestination(for: Int.self) { id in
+                                    Text("destination id: \(id)")
+                                }
+                                
                                 
                             } else if case HabitUIState.error = viewModel.uiState {
                                 
@@ -49,6 +62,9 @@ struct HabitView: View {
                     .navigationTitle("Meus Hábitos")
                 }
             }
+        }
+        .onAppear {
+            viewModel.onAppear()
         }
     }
 }

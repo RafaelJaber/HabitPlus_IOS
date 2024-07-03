@@ -15,61 +15,63 @@ struct HabitCardView: View {
     var body: some View {
         ZStack(alignment: .trailing, content: {
             NavigationLink(value: viewModel.id)  {
-                EmptyView()
-            }
-            .opacity(0)
-            
-            HStack {
-                Image(systemName: "pencil")
-                    .padding(.horizontal, 8)
-                
-                Spacer()
-                
-                HStack(alignment: .top, content: {
-                    
-                    VStack(alignment: .leading, spacing: 4, content: {
-                        
-                        Text(viewModel.name)
-                            .foregroundStyle(Color("primaryColor"))
-                        
-                        Text(viewModel.label)
-                            .foregroundStyle(Color("textColor"))
-                            .bold()
-                        
-                        Text(viewModel.date)
-                            .foregroundStyle(Color("textColor"))
-                            .bold()
-                    })
-                    .frame(maxWidth: 300, alignment: .leading)
+                HStack {
+                    Image(systemName: "pencil")
+                        .padding(.horizontal, 8)
                     
                     Spacer()
                     
-                    VStack(alignment: .leading, spacing: 4, content: {
+                    HStack(alignment: .top, content: {
                         
-                        Text("Registrado")
-                            .foregroundStyle(Color("primaryColor"))
-                            .bold()
-                            .multilineTextAlignment(.leading)
+                        VStack(alignment: .leading, spacing: 4, content: {
+                            
+                            Text(viewModel.name)
+                                .foregroundStyle(Color("primaryColor"))
+                            
+                            Text(viewModel.label)
+                                .foregroundStyle(Color("textColor"))
+                                .bold()
+                            
+                            Text(viewModel.date)
+                                .foregroundStyle(Color("textColor"))
+                                .bold()
+                        })
+                        .frame(maxWidth: 300, alignment: .leading)
                         
-                        Text(viewModel.value)
-                            .foregroundStyle(Color("textColor"))
-                            .bold()
-                            .multilineTextAlignment(.leading)
+                        Spacer()
                         
-                        Text("")
-                            .multilineTextAlignment(.leading)
+                        VStack(alignment: .leading, spacing: 4, content: {
+                            
+                            Text("Registrado")
+                                .foregroundStyle(Color("primaryColor"))
+                                .bold()
+                                .multilineTextAlignment(.leading)
+                            
+                            Text(viewModel.value)
+                                .foregroundStyle(Color("textColor"))
+                                .bold()
+                                .multilineTextAlignment(.leading)
+                            
+                            Text("")
+                                .multilineTextAlignment(.leading)
+                        })
+                        
+                        Spacer()
                     })
-                    
-                    Spacer()
-                })
-                .padding()
-                .cornerRadius(4.0)
+                    .padding()
+                    .cornerRadius(4.0)
+                }
             }
 
             Rectangle()
-                .frame(width: 6)
+                .frame(width: 8)
                 .foregroundColor(viewModel.state)
-                .clipShape(.rect(cornerRadius: 8))
+                .clipShape(.rect(
+                    topLeadingRadius: 0,
+                    bottomLeadingRadius: 0,
+                    bottomTrailingRadius: 4,
+                    topTrailingRadius: 4
+                ))
 
         }).background(
             RoundedRectangle(cornerRadius: 4.0)
@@ -115,7 +117,7 @@ struct HabitCardView: View {
                                                          value: "2",
                                                          state: .green))
         }
-        .padding(.zero)
+        .listStyle(.plain)
         .frame(maxWidth: .infinity)
         .navigationTitle("Teste")
         .navigationDestination(for: Int.self) { id in
