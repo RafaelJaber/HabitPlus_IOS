@@ -49,8 +49,8 @@ struct HabitView: View {
                                     
                                 }
                                 .padding(.horizontal, 14)
-                                .navigationDestination(for: Int.self) { id in
-                                    Text("destination id: \(id)")
+                                .navigationDestination(for: HabitShortDetail.self) { shortDetail in
+                                    viewModel.habitDetailView(habitShortDetail: shortDetail)
                                 }
                                 
                                 

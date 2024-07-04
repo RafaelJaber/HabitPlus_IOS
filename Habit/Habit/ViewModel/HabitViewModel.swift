@@ -85,5 +85,8 @@ class HabitViewModel: ObservableObject {
     }
 }
     
-
-
+extension HabitViewModel {
+    func habitDetailView(habitShortDetail: HabitShortDetail) -> some View{
+        return HabitCardViewRouter.makeHabitDetailView(habitShortDetail: habitShortDetail)
+    }
+}

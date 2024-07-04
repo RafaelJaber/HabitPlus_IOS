@@ -14,7 +14,7 @@ struct HabitCardView: View {
     
     var body: some View {
         ZStack(alignment: .trailing, content: {
-            NavigationLink(value: viewModel.id)  {
+            NavigationLink(value: HabitShortDetail(id: viewModel.id, name: viewModel.name, label: viewModel.label))  {
                 HStack {
                     Image(systemName: "pencil")
                         .padding(.horizontal, 8)
