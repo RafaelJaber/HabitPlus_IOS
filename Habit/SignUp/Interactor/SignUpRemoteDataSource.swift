@@ -19,7 +19,7 @@ class SignUpRemoteDataSource {
         return Future<Bool, AppError> { promise in
             WebService.call(path: .postUser, method: .post, body: request, completion: { result in
                 switch result {
-                    case .failure(let error, let data):
+                    case .failure(_, let data):
                         if let data = data {
                             let response = try? JSONDecoder().decode(ErrorResponse.self, from: data)
                             promise(.failure(AppError.response(message: response?.detail ?? "Erro desconhecido no servidor")))

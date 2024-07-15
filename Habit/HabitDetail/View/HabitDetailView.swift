@@ -44,7 +44,7 @@ struct HabitDetailView: View {
                 .multilineTextAlignment(.center)
             
             LoadingButtonView(action: {
-                //
+                viewModel.save()
             }, 
                 text: "Salvar",
                 showProgress: self.viewModel.uiState == .loading,
@@ -65,5 +65,5 @@ struct HabitDetailView: View {
 }
 
 #Preview {
-    HabitDetailView(viewModel: HabitDetailViewModel(id: 1, name: "Teste", label: "Label"))
+    HabitDetailView(viewModel: HabitDetailViewModel(id: 1, name: "Teste", label: "Label", interactor: HabitDetailInteractor()))
 }
