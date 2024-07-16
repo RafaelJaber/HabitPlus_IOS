@@ -18,14 +18,23 @@ class HabitViewModel: ObservableObject {
     @Published var desc = ""
 
     private var cancellableRequest: AnyCancellable?
+    private var cancellableNotify: AnyCancellable?
     private let interactor: HabitInteractor
+    
+    private let habitPublisher = PassthroughSubject<Bool, Never>()
 
     init(interactor: HabitInteractor) {
         self.interactor = interactor
+        
+        cancellableNotify = habitPublisher.sink(receiveValue: { saved in
+            print("saved: \(saved)")
+        })
+        
     }
 
     deinit {
         cancellableRequest?.cancel()
+        cancellableNotify?.cancel()
     }
 
     
@@ -87,6 +96,6 @@ class HabitViewModel: ObservableObject {
     
 extension HabitViewModel {
     func habitDetailView(habitShortDetail: HabitShortDetail) -> some View{
-        return HabitCardViewRouter.makeHabitDetailView(habitShortDetail: habitShortDetail)
+        return HabitCardViewRouter.makeHabitDetailView(habitShortDetail: habitShortDetail, habitPublisher: habitPublisher)
     }
 }
